@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'virtus'
 gem 'validates'
@@ -25,8 +26,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
