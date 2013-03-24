@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
 
 gem 'jquery-rails'
 gem 'haml-rails'
@@ -42,5 +41,13 @@ group :development do
   # gem 'debugger'
   # Deploy with Capistrano
   # gem 'capistrano'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
