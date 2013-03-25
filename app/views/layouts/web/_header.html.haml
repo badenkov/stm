@@ -1,0 +1,12 @@
+.masthead
+  %h3.muted Simple Task Manager
+  .navbar
+    .navbar-inner
+      .container
+        %ul.nav
+          %li= link_to "Home", "/"
+          %li= link_to "Sign up", new_user_path
+          - if signed_in?
+            %li= link_to "Sign out", session_path, method: :delete
+          - else
+            %li= link_to "Sign in", new_session_path
