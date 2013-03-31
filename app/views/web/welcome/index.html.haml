@@ -1,2 +1,5 @@
 %h1 Web::Welcome#index
 %p Find me in app/views/web/welcome/index.html.haml
+
+- if signed_in?
+  %p= current_user.id

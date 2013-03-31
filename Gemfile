@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'virtus'
 gem 'validates'
+gem 'state_machine'
+gem 'ransack'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,6 +37,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rack-mini-profiler'
   # To use debugger
   # gem 'debugger'
   # Deploy with Capistrano

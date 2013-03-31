@@ -1,0 +1,17 @@
+.pull-right
+  %h2 Поиск
+  = search_form_for @q do |f|
+    .control-group
+      = f.label :title_cont, "Title", class: 'control-label'
+      .controls
+        = f.text_field :title_cont, placeholder: :title
+    .control-group
+      = f.label :state_eq, "State", class: 'control-label'
+      .controls
+        = f.select :state_eq, Story.state_machines[:state].states.map { |s| [s.human_name, s.name] }, include_blank: true
+    .control-group
+      = f.label :owner, class: 'control-label'
+      .controls
+        = f.text_field :owner_email_cont
+    .form-actions
+      =f.submit 'Search', class: 'btn btn-primary'

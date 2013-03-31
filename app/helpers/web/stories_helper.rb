@@ -1,0 +1,2 @@
+module Web::StoriesHelper
+end

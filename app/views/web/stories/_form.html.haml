@@ -1,0 +1,8 @@
+= simple_form_for(@story) do |f|
+  = f.input :title
+  -#= f.input :description
+  = f.association :owner, label_method: :email
+  = f.association :requester, label_method: :email
+  = f.input :state, as: :state
+
+  = f.button :submit

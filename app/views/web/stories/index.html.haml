@@ -1,0 +1,43 @@
+.row-fluid
+  .span8
+    %h2(style="padding-top: 0; margin-top: 0") Задачи
+  .span4
+    = link_to new_story_path, class: 'btn btn-success pull-right' do
+      %i.icon-ok
+        Новая задача
+
+.row-fluid
+  .span8
+    - if @stories.empty?
+      %p Not found
+    - else
+      %table.table
+        %tr
+          %th= sort_link @q, 'title'
+          %th= sort_link @q, 'state'
+          %th= sort_link @q, 'owner'
+          %th= sort_link @q, 'requester'
+          %th
+
+        - @stories.each do |story|
+          %tr
+            %td= story.title
+            %td= story.state
+            %td= story.owner.email unless story.owner.nil?
+            %td= story.requester.email unless story.owner.nil?
+            %td
+              =link_to story do
+                %i.icon-check
+              =link_to edit_story_path(story) do
+                %i.icon-edit
+              =link_to story, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %i.icon-trash
+
+  .span4
+    %div(style="padding: 0 0 15px")
+      %ul.nav.nav-list
+        %li
+
+    = render 'search_form'
+
+
