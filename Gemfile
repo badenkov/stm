@@ -42,11 +42,18 @@ group :development do
   # gem 'debugger'
   # Deploy with Capistrano
   # gem 'capistrano'
+
+  gem 'tconsole'
+end
+
+group :test do
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do
   gem 'sqlite3'
 end
+
 
 group :production do
   gem 'pg'

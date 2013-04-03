@@ -38,6 +38,7 @@ GEM
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
+    chattyproc (1.0.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -54,6 +55,11 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     haml (4.0.0)
       tilt
     haml-rails (0.4)
@@ -84,6 +90,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.21)
+    minitest (4.3.3)
     multi_json (1.7.1)
     pg (0.14.1)
     polyamorous (0.5.0)
@@ -145,6 +152,11 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     state_machine (1.1.2)
+    tconsole (1.2.8)
+      chattyproc (~> 1.0.0)
+      minitest (~> 4.3.0)
+      term-ansicolor (~> 1.0.7)
+    term-ansicolor (1.0.7)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -180,6 +192,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
+  factory_girl_rails
   haml-rails
   jquery-rails
   less-rails
@@ -194,6 +207,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   state_machine
+  tconsole
   therubyracer
   thin
   twitter-bootstrap-rails
