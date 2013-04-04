@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'pg'
+
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
@@ -17,8 +19,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,20 +43,23 @@ group :development do
   # Deploy with Capistrano
   # gem 'capistrano'
 
-  gem 'tconsole'
 end
 
 group :test do
+  gem 'tconsole'
   gem 'factory_girl_rails'
+  gem 'turn'
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
   gem 'sqlite3'
 end
 
-
 group :production do
-  gem 'pg'
   gem 'thin'
+  # Use unicorn as the app server
+  # gem 'unicorn'
 end
 

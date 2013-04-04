@@ -29,6 +29,7 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     addressable (2.3.3)
+    ansi (1.4.3)
     arel (3.0.2)
     backports (2.6.7)
     bcrypt-ruby (3.0.1)
@@ -47,7 +48,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    colorize (0.5.8)
     commonjs (0.2.6)
+    coveralls (0.6.3)
+      colorize
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      thor
     daemons (1.1.9)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.1)
@@ -136,6 +144,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -144,6 +154,10 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -169,6 +183,8 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    turn (0.9.6)
+      ansi
     twitter-bootstrap-rails (2.2.6)
       actionpack (>= 3.1)
       execjs
@@ -192,6 +208,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
+  coveralls
   factory_girl_rails
   haml-rails
   jquery-rails
@@ -205,11 +222,13 @@ DEPENDENCIES
   ransack
   sass-rails (~> 3.2.3)
   simple_form
+  simplecov
   sqlite3
   state_machine
   tconsole
   therubyracer
   thin
+  turn
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   validates

@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 1.9.3
+script:
+  - bundle exec rake --trace db:migrate test
+branch:
+  only:
+    - develop
+    - master
+before_script:
+  - psql -c 'create database stm_test' -U postgres
+  - cp config/database.yml.sample config/database.yml
