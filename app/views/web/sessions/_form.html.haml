@@ -1,5 +1,6 @@
-= simple_form_for @type, url: session_path, html: { class: 'form-horizontal' } do |f|
+= simple_form_for @type, url: session_path(from: params[:from]), html: { class: 'form-horizontal' } do |f|
   = f.input :email
   = f.input :password
 
-  = f.button :submit, class: 'btn btn-success'
+  .form-actions
+    = f.button :submit, "Войти", class: 'btn btn-success'

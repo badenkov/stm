@@ -1,7 +1,11 @@
 Stm::Application.routes.draw do
 
   scope module: :web do
-    resources :stories
+    resources :stories do
+      scope module: :stories do
+        resources :comments, only: [:edit, :create, :update, :destroy]
+      end
+    end
     resources :users, only: [:new, :create]
 
     namespace :account do

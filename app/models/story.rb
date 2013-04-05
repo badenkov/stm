@@ -1,8 +1,7 @@
 class Story < ActiveRecord::Base
-  attr_accessible :description, :owner_id, :requester_id, :state, :state_event, :title, :title_event
-
   belongs_to :requester, class_name: 'User'
   belongs_to :owner, class_name: 'User'
+  has_many :comments, as: :commentable
 
   state_machine :state, initial: :new do
     state :new

@@ -1,0 +1,5 @@
+= simple_form_for(@comment, url: story_comment_path(from: params[:from])) do |f|
+  = f.input :body, input_html: { class: 'span8' }
+
+  .form-actions
+    = f.button :submit

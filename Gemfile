@@ -12,6 +12,10 @@ gem 'virtus'
 gem 'validates'
 gem 'state_machine'
 gem 'ransack'
+gem 'gravatar_image_tag'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem 'rdiscount'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -37,7 +41,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'rack-mini-profiler'
+  #gem 'rack-mini-profiler'
   # To use debugger
   # gem 'debugger'
   # Deploy with Capistrano

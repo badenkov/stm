@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class Web::UsersControllerTest < ActionController::TestCase
-
   test "should get new" do
     get :new
+
     assert_response :success
   end
 
@@ -14,8 +14,8 @@ class Web::UsersControllerTest < ActionController::TestCase
     post :create, user: attrs
 
     assert_response :redirect
+
     user = User.find_by_email(attrs[:email])
     assert user
   end
-
 end

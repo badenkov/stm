@@ -2,7 +2,11 @@ require 'test_helper'
 
 class Web::StoriesControllerTest < ActionController::TestCase
   setup do
+    @user = create :user
+    sign_in @user
+
     @story = create :story
+    @user.requested_stories << @story
   end
 
   test "should get index" do
@@ -14,42 +18,44 @@ class Web::StoriesControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
+
+    assert_response :success
+  end
+
+  test "should show story" do
+    get :show, id: @story
+
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get :edit, id: @story
+
     assert_response :success
   end
 
   test "should create story" do
     attrs = attributes_for :story
 
-    assert_difference('Story.count') do
-      post :create, story: attrs
-    end
+    post :create, story: attrs
 
-    #assert_redirected_to story_path(assigns(:story))
     assert_response :redirect
-  end
-
-  test "should show story" do
-    get :show, id: @story
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @story
-    assert_response :success
   end
 
   test "should update story" do
-    #put :update, id: @story.id, story: @story
-    #assert_redirected_to story_path(assigns(:story))
-    #assert_response :redirect
+    attrs = attributes_for :story
+    put :update, id: @story, story: attrs
+
+    assert_response :redirect
+
+    story = Story.find(@story.id)
+    assert story.title == attrs[:title]
   end
 
   test "should destroy story" do
-    assert_difference('Story.count', -1) do
-      delete :destroy, id: @story
-    end
+    delete :destroy, id: @story
 
-    #assert_redirected_to stories_path
     assert_response :redirect
+    assert !Story.exists?(@story)
   end
 end
