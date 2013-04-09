@@ -1,4 +1,8 @@
 class Story < ActiveRecord::Base
+  attr_accessible :title, :description, :owner_id, :state_event
+
+  validates :title, presence: true
+
   belongs_to :requester, class_name: 'User'
   belongs_to :owner, class_name: 'User'
   has_many :comments, as: :commentable
