@@ -1,9 +1,9 @@
 class Web::Stories::ApplicationController < Web::ApplicationController
+  helper_method :current_story
 
   private
 
-  def resource_story
-    StoryType.find(params[:story_id])
+  def current_story
+    @current_story ||= Story.find(params[:story_id])
   end
-  helper_method :resource_story
 end

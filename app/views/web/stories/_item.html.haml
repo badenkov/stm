@@ -1,16 +1,9 @@
-- if controller.action_name == 'index'
-  %h3
-    = link_to story.title, story_path(story)
-- else
-  %h3
-    = story.title
-    = link_to "Редактировать", edit_story_path(story), class: "btn btn-mini btn-success"
-    = link_to "Удалить", story_path(story), method: :delete, class: "btn btn-mini btn-danger",
-                                                               confirm: "Вы уверены?"
+%h3
+  = link_to story.title, story_path(story)
+
 .row-fluid
   .span8
     = markdown story.description
-
 
   .span4
     .actions
