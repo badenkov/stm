@@ -12,17 +12,11 @@ class Web::Stories::CommentsControllerTest < ActionController::TestCase
     set_http_referer
   end
 
-  #test "should get new" do
-    #get :new
+  test "should get edit" do
+    get :edit, story_id: @story, id: @comment
 
-    #assert_response :success
-  #end
-
-  #test "should get edit" do
-    #get :edit, id: @story
-
-    #assert_response :success
-  #end
+    assert_response :success
+  end
   
   test "should create comment" do
     attrs = attributes_for :comment
