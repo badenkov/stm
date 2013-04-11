@@ -1,0 +1,16 @@
+ru:
+  activerecord:
+    state_machines:
+      story:
+        states:
+          new: 'Новый'
+          started: 'В работе'
+          finished: 'Законченый'
+          accepted: 'Принят'
+          rejected: 'Отклонен'
+        events:
+          start: 'Начать'
+          finish: 'Закончить'
+          accept: 'Принять'
+          reject: 'Отклонить'
+          restart: 'Начать снова'

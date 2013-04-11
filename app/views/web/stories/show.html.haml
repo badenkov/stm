@@ -12,11 +12,11 @@
     %p
       %strong Status
       %div.label.label-info= @story.human_state_name
-    - unless @story.owner.nil?
+    - if @story.owner
       %p
         %strong Assigned to 
         %div.label= @story.owner.email
-    - unless @story.requester.nil?
+    - if @story.requester
       %p
         %strong Requested by
         %div.label= @story.requester.email
