@@ -2,7 +2,7 @@ class StateInput < SimpleForm::Inputs::Base
   def input
     label_method = :human_event
     value_method = :event
-    current_state = template.content_tag(:div, template.content_tag(:span, "Current state: #{object.human_state_name}", :class => "label label-info")  )
+    current_state = template.content_tag(:div, template.content_tag(:span, "Текущий статус: #{object.human_state_name}", :class => "label label-info")  )
 
     out = @builder.collection_select(
       "#{attribute_name}_event", collection, value_method, label_method,
@@ -18,7 +18,7 @@ class StateInput < SimpleForm::Inputs::Base
 
   def input_options
     options = super
-    options[:prompt] = 'Choose new state...'
+    options[:prompt] = 'Выберите новый статус...'
     options
   end
 

@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      story: 'Задача'
+      comment: 'Комментарий'
+    attributes:
+      story:
+        title: 'Название'
+        description: 'Описание'
+        owner: 'Исполнитель'
+        state: 'Статус'
+      comment:
+        body: 'Тело'
+      user:
+        email: 'E-mail'
+        password: 'Пароль'
+        password_confirmation: 'Повтор пароля'
