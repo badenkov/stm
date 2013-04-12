@@ -1,3 +1,4 @@
+# encoding=utf-8
 class StateInput < SimpleForm::Inputs::Base
   def input
     label_method = :human_event
