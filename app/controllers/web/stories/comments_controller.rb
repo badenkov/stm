@@ -1,8 +1,8 @@
 class Web::Stories::CommentsController < Web::Stories::ApplicationController
   before_filter :authenticate!
-  before_filter :current_comment, only: [:edit, :update]
 
   def edit
+    current_comment
   end
 
   def create
@@ -16,7 +16,7 @@ class Web::Stories::CommentsController < Web::Stories::ApplicationController
   end
   
   def update
-    if @comment.update_attributes(params[:comment])
+    if current_comment.update_attributes(params[:comment])
       redirect_to params[:from] || story_path(current_story)
     else
       render :edit

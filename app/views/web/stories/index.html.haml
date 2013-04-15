@@ -12,15 +12,14 @@
       #{sort_link @q, 'owner', 'Исполнителю'},
       #{sort_link @q, 'requester', 'Запросившему'}
 
-    - if @stories.empty?
-      %p Not found
-    - else
+    - if @stories.any?
       %p
       - @stories.each do |story|
         = render partial: 'item', locals: { story: story }
         %hr
-
       = paginate @stories
+    - else
+      %p Not found
 
   .span4
     = render 'search_form'

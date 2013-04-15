@@ -1,2 +1,0 @@
-module Web::UsersHelper
-end

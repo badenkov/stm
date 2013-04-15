@@ -8,7 +8,7 @@ module AuthHelper
   end
 
   def signed_in?
-    current_user
+    current_user.present?
   end
 
   def authenticate!

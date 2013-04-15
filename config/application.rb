@@ -16,7 +16,7 @@ module Stm
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -62,7 +62,10 @@ module Stm
     config.assets.version = '1.0'
 
     config.generators do |g|
+      g.template_engine :haml
       g.test_framework :test_unit, fixture: true, fixture_replacement: :factory_girl
+      g.stylesheets false
+      g.javascripts false
     end
   end
 end
