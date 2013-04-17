@@ -1,7 +1,7 @@
 Stm::Application.routes.draw do
 
   namespace :api do
-    resources :stories, only: [:index, :show]
+    resources :stories, only: [:index, :show, :create, :update, :destroy]
   end
 
   scope module: :web do
