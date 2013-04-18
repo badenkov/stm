@@ -5,10 +5,7 @@ ru:
         user_sign_in_type:
           attributes:
             email:
-              email: 'Должен быть правильный адрес Email'
               user_or_password_invalid: 'Неправильный email или пароль'
-            password:
-              blank: 'Не должен быть пустым'
     models:
       user_sign_in: 'Вход'
 

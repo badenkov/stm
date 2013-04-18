@@ -1,11 +1,11 @@
-%h2 Поиск
+%h2= t '.title'
 = search_form_for @q do |f|
   .control-group
-    = f.label :title_cont, "Title", class: 'control-label'
+    = f.label :title_cont, class: 'control-label'
     .controls
-      = f.text_field :title_cont, placeholder: :title, class: 'span12'
+      = f.text_field :title_cont, class: 'span12'
   .control-group
-    = f.label :state_eq, "State", class: 'control-label'
+    = f.label :state_eq, class: 'control-label'
     .controls
       = f.select :state_eq, Story.state_machines[:state].states.map { |s| [s.human_name, s.name] }, { include_blank: true }, { class: 'span12' }
   .control-group
@@ -13,4 +13,4 @@
     .controls
       = f.text_field :owner_email_cont, class: 'span12'
   .form-actions
-    =f.submit 'Search', class: 'btn btn-primary'
+    =f.submit t('.button_label'), class: 'btn btn-primary'

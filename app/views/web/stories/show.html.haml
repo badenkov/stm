@@ -1,8 +1,8 @@
 %h3
   = @story.title
-  = link_to "Редактировать", edit_story_path(@story), class: "btn btn-mini btn-success"
-  = link_to "Удалить", story_path(@story), method: :delete, class: "btn btn-mini btn-danger",
-                                                               confirm: "Вы уверены?"
+  = link_to t(".edit"), edit_story_path(@story), class: "btn btn-mini btn-success"
+  = link_to t(".delete"), story_path(@story), method: :delete, class: "btn btn-mini btn-danger",
+                                                               confirm: t(".delete_confirm")
 .row-fluid
   .span8
     = markdown @story.description
@@ -10,15 +10,15 @@
   .span4
     .actions
     %p
-      %strong Status
+      %strong= t '.state'
       %div.label.label-info= @story.human_state_name
     - if @story.owner
       %p
-        %strong Assigned to 
+        %strong= t '.assigned_to'
         %div.label= @story.owner.email
     - if @story.requester
       %p
-        %strong Requested by
+        %strong= t '.requester'
         %div.label= @story.requester.email
 
   .span12

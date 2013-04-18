@@ -1,8 +1,7 @@
-%h1 Мои задачи
+%h1= t '.title'
+
 
 %table.table
-  %tr
-    %th Title
 
   - @stories.each do |story|
     %tr

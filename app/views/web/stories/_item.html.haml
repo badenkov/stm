@@ -8,13 +8,13 @@
   .span4
     .actions
     %p
-      %strong Status
+      %strong= t '.state'
       %div.label.label-info= story.human_state_name
     - if story.owner
       %p
-        %strong Assigned to 
+        %strong= t '.assigned_to'
         %div.label= story.owner.email
     - if story.requester
       %p
-        %strong Requested by
+        %strong= t '.requester'
         %div.label= story.requester.email
