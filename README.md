@@ -12,10 +12,20 @@ Simple Task Manager
 -------------------------
 
 ```sh
+
+Приготовления
+
   git clone http://github.com/badenkov/stm
   cd stm
   bundle install
   bin/rake db:create db:migrate db:seed
-  bin/rails s
+  
+Скопировать файл с переменными окружения, и подредактировать под свои нужды
+
+  cp ./example.env ./.env
+  
+Запускаем
+  
+  bin/foreman start
 ```
 

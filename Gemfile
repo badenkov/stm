@@ -18,6 +18,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'rdiscount'
 
+gem 'unicorn'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -35,6 +37,7 @@ group :assets do
 end
 
 group :development do
+  gem 'foreman'
   gem 'quiet_assets'
   gem 'letter_opener'
   gem 'thin'
@@ -62,8 +65,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'thin'
-  # Use unicorn as the app server
-  # gem 'unicorn'
 end
 
