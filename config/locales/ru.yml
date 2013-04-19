@@ -1,0 +1,78 @@
+ru:
+  application_name: "Простой менеджер задач"
+  helpers:
+    submit:
+      user_sign_in_type:
+        create: "Вход"
+      user:
+        create: "Зарегистрироваться"
+        update: "Сохранить"
+      story:
+        create: "Создать"
+        update: "Сохранить"
+      comment:
+        create: "Отправить"
+        update: "Сохранить"
+  layouts:
+    web:
+      header:
+        navbar:
+          home: "Главная"
+          stories: "Задачи"
+          my_stories: "Мои задачи"
+          sign_in: "Вход"
+          sign_out: "Выход"
+          sign_up: "Регистрация"
+  web:
+    welcome:
+      index:
+        title: "Добро пожаловать!"
+        description:
+          Это простой менеджер задач
+    sessions:
+      new:
+        title: "Вход"
+    users:
+      new:
+        title: "Регистрация"
+    stories:
+      index:
+        title: "Задачи"
+        new_story: "Новая задача"
+        not_found: "Нет задач"
+        sort_by: "Сортировать по:"
+        by_title: "заголовку"
+        by_state: "состоянию"
+        by_owner: "исполнителю"
+        by_requester: "запросившему"
+      new:
+        title: "Новая задача"
+      edit:
+        title: "Редактировать задачу"
+      show:
+        edit: "Редактировать задачу"
+        delete: "Удалить задачу"
+        delete_confirm: "Вы уверены?"
+        state: "Состояние"
+        assigned_to: "Исполнитель"
+        requester: "Запросивший"
+      item:
+        state: "Состояние"
+        assigned_to: "Исполнитель"
+        requester: "Запросивший"
+      search_form:
+        title: "Поиск"
+        button_label: "Искать"
+      comments:
+        title: "Комментарии"
+        add_comment: "Добавить комментарий"
+        edit_comment: "Редактировать"
+        delete_comment: "Удалить"
+        delete_confirm: "Вы уверены?"
+        edit:
+          title: "Редактирование комментария"
+
+    account:
+      stories:
+        index:
+          title: "Мои задачи"

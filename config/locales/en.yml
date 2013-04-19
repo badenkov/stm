@@ -2,4 +2,83 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  application_name: "Simple Task Manager"
+  helpers:
+    submit:
+      user_sign_in_type:
+        create: 'Sign in'
+      user:
+        create: "Sign up"
+        update: "Save"
+      story:
+        create: "Create"
+        update: "Save"
+      comment:
+        create: "Send"
+        update: "Save"
+  layouts:
+    web:
+      header:
+        navbar:
+          home: "Home"
+          stories: "Stories"
+          my_stories: "My stories"
+          sign_in: "Sign in"
+          sign_out: "Sign out"
+          sign_up: "Sign up"
+  web:
+    welcome:
+      index:
+        title: "Welcome!"
+        description:
+          This is simple task manager
+    sessions:
+      new:
+        title: "Sign in"
+    users:
+      new:
+        title: "Sign up"
+    stories:
+      index:
+        title: "Stories"
+        new_story: "New story"
+        not_found: "Not found"
+        sort_by: "Sort by:"
+        by_title: "title"
+        by_state: "state"
+        by_owner: "assignee"
+        by_requester: "requster"
+      new:
+        title: "New story"
+      edit:
+        title: "Edit story"
+      show:
+        edit: "Edit story"
+        delete: "Delete story"
+        delete_confirm: "Are you shure?"
+        state: "State"
+        assigned_to: "Assigned to"
+        requester: "Requested by"
+      item:
+        state: "State"
+        assigned_to: "Assigned to"
+        requester: "Requested by"
+      search_form:
+        title: "Search"
+        button_label: "Search"
+      comments:
+        title: "Comments"
+        add_comment: "Add comment"
+        edit_comment: "Edit"
+        delete_comment: "Delete"
+        delete_confirm: "Are you shure?"
+        edit:
+          title: "Edit comment"
+
+    account:
+      stories:
+        index:
+          title: "My stories"
+
+
+

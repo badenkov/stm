@@ -1,0 +1,23 @@
+%h3= t '.title'
+
+%ul.media-list
+  - @story.comments.each do |comment|
+    %li.media
+      %a.pull-left
+        = gravatar_image_tag(comment.user.email, alt: comment.user.email)
+      .media-body
+        %h4.media-heading
+          = comment.user.email
+          = link_to t(".edit_comment"), edit_story_comment_path(@story, comment, from: story_url(@story)), class: "btn btn-mini"
+          = link_to t(".delete_comment"), story_comment_path(@story, comment), method: :delete, confirm: t(".delete_confirm"), class: "btn btn-mini"
+
+        .actions
+
+        = comment.body
+
+
+%h4= t '.add_comment'
+= simple_form_for(Comment.new, url: story_comments_path(@story)) do |f|
+  = f.input :body, input_html: { class: 'span8', rows: 4 }
+  .form-actions
+    = f.button :submit

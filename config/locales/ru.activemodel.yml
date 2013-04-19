@@ -1,0 +1,15 @@
+ru:
+  activemodel:
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            email:
+              user_or_password_invalid: 'Неправильный email или пароль'
+    models:
+      user_sign_in: 'Вход'
+
+    attributes:
+      user_sign_in_type:
+        email: 'E-mail'
+        password: 'Пароль'

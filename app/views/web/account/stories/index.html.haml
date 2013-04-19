@@ -1,0 +1,8 @@
+%h1= t '.title'
+
+
+%table.table
+
+  - @stories.each do |story|
+    %tr
+      %td= story.title

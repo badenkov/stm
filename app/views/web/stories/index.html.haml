@@ -1,0 +1,28 @@
+%h2= t '.title'
+
+.row-fluid
+  .span8
+    = link_to new_story_path, class: 'btn btn-success' do
+      %i.icon-ok
+        = t '.new_story'
+
+    %p(style = "padding: 10px 0 0;")
+      %strong= t '.sort_by'
+      #{sort_link @q, 'title', t('.by_title')},
+      #{sort_link @q, 'state', t('.by_state')},
+      #{sort_link @q, 'owner', t('.by_owner')},
+      #{sort_link @q, 'requester', t('.by_requester')}
+
+    - if @stories.any?
+      %p
+      - @stories.each do |story|
+        = render partial: 'item', locals: { story: story }
+        %hr
+      = paginate @stories
+    - else
+      %p=t '.not_found'
+
+  .span4
+    = render 'search_form'
+
+

@@ -1,0 +1,11 @@
+= simple_form_for(@story) do |f|
+  .row-fluid
+    .span8
+      = f.input :title, input_html: { class: 'span12' }
+      = f.input :description, input_html: { class: 'span12' }
+    .span4
+      = f.association :owner, label_method: :email, input_html: { class: 'span12' }
+      = f.input :state, as: :state, input_html: { class: 'span12' }
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'

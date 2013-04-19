@@ -1,12 +1,24 @@
 .masthead
-  %h3.muted Simple Task Manager
+  .pull-right
+    .lang(style="padding-right: 5px;")
+      - if I18n.locale == :ru
+        %span Ru
+      - else
+        = link_to "Ru", url_for(locale: nil)
+      - if I18n.locale == :en
+        %span En
+      - else
+        = link_to "En", url_for(locale: :en)
+  %h3.muted= t 'application_name'
   .navbar
     .navbar-inner
       .container
         %ul.nav
-          %li= link_to "Home", "/"
-          %li= link_to "Sign up", new_user_path
+          %li= link_to t('.navbar.home'), root_path
           - if signed_in?
-            %li= link_to "Sign out", session_path, method: :delete
+            %li= link_to t('.navbar.stories'), stories_path
+            %li= link_to t('.navbar.my_stories'), account_stories_path
+            %li= link_to t('.navbar.sign_out'), session_path, method: :delete
           - else
-            %li= link_to "Sign in", new_session_path
+            %li= link_to t('.navbar.sign_up'), new_user_path
+            %li= link_to t('.navbar.sign_in'), new_session_path

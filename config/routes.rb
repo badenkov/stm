@@ -1,11 +1,28 @@
 Stm::Application.routes.draw do
 
+  namespace :api do
+    namespace :v1 do
+      resources :stories, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
+
   scope module: :web do
-    resources :users, only: [:new, :create]
+    scope "(:locale)", locale: /en/ do
+      resources :stories do
+        scope module: :stories do
+          resources :comments, only: [:edit, :create, :update, :destroy]
+        end
+      end
+      resources :users, only: [:new, :create]
 
-    resource :session, only: [:new, :create, :destroy]
+      namespace :account do
+        resources :stories, only: [:index]
+      end
 
-    root to: "welcome#index"
+      resource :session, only: [:new, :create, :destroy]
+
+      root to: "welcome#index"
+    end
   end
 
 end

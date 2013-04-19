@@ -7,9 +7,9 @@ class Web::SessionsController < Web::ApplicationController
     @type = UserSignInType.new(params[:user_sign_in_type])
 
     if @type.valid?
-      flash[:notice] = 'Success'
+      flash[:notice] = params[:from]|| 'Success!!!'
       sign_in(@type.user)
-      redirect_to new_session_path
+      redirect_to params[:from] || root_path
     else
       flash[:alert] = 'Error'
       render :new

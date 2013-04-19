@@ -3,5 +3,6 @@ class UserRegistrationType < User
 
   attr_accessible :email, :password, :password_confirmation
 
-  validates :password, :password_confirmation, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end
